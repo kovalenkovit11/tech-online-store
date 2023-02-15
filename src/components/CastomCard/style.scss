@@ -1,0 +1,43 @@
+.castom-card{
+    position: relative;
+    width:233px ;
+    height: 350px;
+    background-image: url(../CustomBuilds/img/image30.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 36px;
+    
+  .custom-builds{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+    p{
+        font-size: 20px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 130%;
+        color: #FFFFFF;
+    
+    }
+            a{
+           
+            position: absolute;
+            
+            left: 68px;
+            bottom: 32px;
+
+            font-size: 13px;
+            line-height: 115%;
+            text-decoration-line: underline;
+            color: #FFFFFF;
+            }
+}

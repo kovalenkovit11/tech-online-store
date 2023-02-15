@@ -1,0 +1,48 @@
+.navbar{
+    max-width: 1400px;
+    height: 92px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #000000;
+.nav-links{
+        display: flex;
+        justify-content:space-between;
+        text-align: center;
+        flex-wrap: wrap;
+        .nav-item{
+            margin: 8px;
+        }
+        .nav-btn{
+
+    align-items: center;
+    padding: 8px 26px;
+    margin-left: 10px;
+    color: #0156FF;
+    background: #FFFFFF;
+    border: 2px solid #0156FF;
+    border-radius: 50px;
+        }
+}
+
+}
+.nav-right{
+    display: flex;
+    justify-content: center;    
+    text-align: center;
+    align-items: center;
+
+
+    svg{
+        margin-left: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}

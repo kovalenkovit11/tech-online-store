@@ -1,0 +1,26 @@
+.laptops-nav{
+    display: flex;
+    flex-direction: row;
+    }
+    
+    .laptops-item{
+        font-style: normal;
+        font-size: 16px;
+        line-height: 140%;
+        font-weight: 600;
+        margin-right: 26px;
+        color: #838383;
+    
+    }
+    .active{
+    
+            border-bottom: 2px solid #0156FF;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 140%;
+            text-align: center;
+            color: #000000;
+    
+    
+    
+    } 

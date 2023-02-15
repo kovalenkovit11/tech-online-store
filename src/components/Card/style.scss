@@ -1,0 +1,73 @@
+.main-card {
+    width: 233px;
+    height: 346px;
+
+    .main-content__check {
+        display: flex;
+        align-items: center;
+        margin-left: 24px;
+
+        .main-content__check--text {
+            margin-left: 5px;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 210%;
+            color: #78a962;
+        }
+    }
+
+    .main-content__info {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-left: 22px;
+
+        .main-content__reviews {
+            font-size: 12px;
+            line-height: 210%;
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            margin-left: 10px;
+
+            color: #a2a6b0;
+        }
+    }
+
+    .main-content__description {
+        margin: 0 auto;
+        margin-top: 10px;
+        font-size: 13px;
+        line-height: 20px;
+        text-align: start;
+        width: 185px;
+        color: #000000;
+    }
+}
+
+.main-content__sale {
+    margin-left: 25px;
+    margin-top: 20px;
+
+    .sale-old {
+        font-size: 14px;
+        line-height: 140%;
+        /*or20px*/
+        display: flex;
+        align-items: center;
+        text-decoration-line: line-through;
+        -moz-text-decoration-line: line-through;
+        color: #666666;
+    }
+
+    .sale-new {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 140%;
+        display: flex;
+        align-items: center;
+        color: #000000;
+    }
+}
