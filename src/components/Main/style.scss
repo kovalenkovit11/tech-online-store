@@ -1,0 +1,112 @@
+.main-wrapper{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.main{
+    background-image: url('./img/image26.png');
+    display: flex;
+    margin: 0 auto;;
+    justify-content: center;
+    max-width: 1400px;
+    height: 328px;
+}
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+
+    h3{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 33px;
+        
+        display: flex;
+        align-items: center;
+        text-align: center;
+        
+        color: #000000;
+            }
+            a{
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 115%;
+                text-decoration-line: underline;
+                color: #0156FF;
+
+            }
+}
+
+.main-card{
+    width: 234px;
+    height: 346px;
+    margin-top: 40px;
+border: 1px solid #e3e3e3;
+    .main-content__check{
+        display: flex;
+        align-items: center;
+        margin-left: 24px;
+        .main-content__check--text{
+            margin-left: 5px;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 210%;
+            color: #78A962;
+        }
+    }
+
+    .main-content__info{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .main-content__reviews{
+            font-size: 12px;
+line-height: 210%;
+/* or 25px */
+
+display: flex;
+align-items: center;
+text-align: center;
+
+margin-left: 10px;
+
+color: #A2A6B0;
+        }
+    }
+
+    .main-content__description{
+        margin: 0 auto;
+        margin-top: 10px;
+        font-size: 13px;   
+        line-height: 20px;
+        text-align: start;
+        width: 185px;
+        color: #000000;
+
+    }
+}
+.main-content__sale{
+margin-left: 25px;
+margin-top: 20px;
+    .sale-old{
+        font-size: 14px;
+        line-height: 140%;
+        /*or20px*/display: flex;
+        align-items: center;
+        text-decoration-line:line-through;
+        -moz-text-decoration-line:line-through;
+        color: #666666;
+        
+    }
+    .sale-new{
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 140%;
+        display: flex;
+        align-items: center;
+        color: #000000;
+    }
+}
