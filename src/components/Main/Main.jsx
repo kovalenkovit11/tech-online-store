@@ -7,6 +7,7 @@ import Desktops from '../Desktops/Desktops';
 import Monitors from '../Monitors/Monitors';
 import Brands from '../Brands/Brands';
 import FollowUs from '../FollowUs/FollowUs';
+import Comments from '../Comments/Comments';
 const Main = () => {
   return (
     <div className='main-wrapper'>
@@ -23,6 +24,8 @@ const Main = () => {
       <Monitors/>
       <Brands/>
       <FollowUs/>
+      <Comments/>
+     
         </div>
   )
 }
