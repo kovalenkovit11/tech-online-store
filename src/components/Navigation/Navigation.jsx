@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./style.scss";
 import cartImage from "./image42.png"
 const Navigation = () => {
@@ -6,7 +7,7 @@ const Navigation = () => {
   return (
     <div>
     <nav className="navbar">
-     <svg
+     <Link to={'/'}><svg
           width="34"
           height="41"
           viewBox="0 0 34 41"
@@ -17,18 +18,18 @@ const Navigation = () => {
             d="M17.0331 0.945374L0.296875 10.8637V23.0708L17.0331 32.9891L30.4588 25.3596V28.9836L17.0331 36.9946L0.296875 26.8855V31.2725L17.0331 41L33.7693 31.2725V19.0653L20.3435 26.8855V23.0708L33.7693 15.0599V10.8637L17.0331 0.945374Z"
             fill="#0156FF"
           />
-        </svg>
+        </svg></Link>
 
       <div>
         <ul className="nav-links">
-          <li className="nav-item">Laptops</li>
-          <li className="nav-item">Desktop PCs</li>
-          <li className="nav-item">Networking Devices</li>
-          <li className="nav-item">Printers & Scanners</li>
-          <li className="nav-item">PC Parts</li>
-          <li className="nav-item">All Other Products</li>
-          <li className="nav-item">Repairs</li>
-          <button className="nav-btn">Our Deals</button>
+          <Link to={"/laptops"}><li className="nav-item">Laptops</li></Link>
+          <Link to={"/desctop"}><li className="nav-item">Desktop PCs</li></Link>
+          <Link to={"/network"}><li className="nav-item">Networking Devices</li></Link>
+          <Link to={"/printers"}><li className="nav-item">Printers & Scanners</li></Link>
+          <Link to={"/pc"}><li className="nav-item">PC Parts</li></Link>
+          <Link to={"/allOthers"}><li className="nav-item">All Other Products</li></Link>
+          <Link to={"/repairs"}><li className="nav-item">Repairs</li></Link>
+          <Link to={"/details"}><button className="nav-btn">Our Details</button></Link>
         </ul>
       </div>
       <div className="nav-right">
@@ -50,7 +51,7 @@ const Navigation = () => {
         </svg>
       </div>
      <div className="cart-detail">
-     <svg
+     <Link to={"/cart"}><svg
           width="25"
           height="25"
           viewBox="0 0 25 25"
@@ -61,11 +62,11 @@ const Navigation = () => {
             d="M14.5834 20.8334C15.1359 20.8334 15.6658 20.6139 16.0565 20.2232C16.4473 19.8325 16.6667 19.3026 16.6667 18.75C16.6667 18.1975 16.4473 17.6676 16.0565 17.2769C15.6658 16.8862 15.1359 16.6667 14.5834 16.6667C14.0309 16.6667 13.501 16.8862 13.1103 17.2769C12.7196 17.6676 12.5001 18.1975 12.5001 18.75C12.5001 19.3026 12.7196 19.8325 13.1103 20.2232C13.501 20.6139 14.0309 20.8334 14.5834 20.8334ZM7.29174 20.8334C7.84428 20.8334 8.37418 20.6139 8.76488 20.2232C9.15558 19.8325 9.37508 19.3026 9.37508 18.75C9.37508 18.1975 9.15558 17.6676 8.76488 17.2769C8.37418 16.8862 7.84428 16.6667 7.29174 16.6667C6.73921 16.6667 6.20931 16.8862 5.81861 17.2769C5.4279 17.6676 5.20841 18.1975 5.20841 18.75C5.20841 19.3026 5.4279 19.8325 5.81861 20.2232C6.20931 20.6139 6.73921 20.8334 7.29174 20.8334ZM20.873 6.16981C21.133 6.16142 21.3796 6.05223 21.5606 5.86531C21.7416 5.6784 21.8428 5.42842 21.8428 5.16825C21.8428 4.90807 21.7416 4.6581 21.5606 4.47118C21.3796 4.28427 21.133 4.17507 20.873 4.16669H19.674C18.7345 4.16669 17.922 4.81877 17.7178 5.73544L16.4126 11.6125C16.2084 12.5292 15.3959 13.1813 14.4563 13.1813H6.63133L5.12924 7.17085H14.8636C15.1212 7.1591 15.3644 7.0485 15.5425 6.86205C15.7206 6.67561 15.82 6.42767 15.82 6.16981C15.82 5.91195 15.7206 5.66401 15.5425 5.47757C15.3644 5.29113 15.1212 5.18052 14.8636 5.16877H5.12924C4.82473 5.16868 4.5242 5.23802 4.25051 5.37151C3.97682 5.50501 3.73716 5.69915 3.54976 5.93917C3.36236 6.17919 3.23215 6.45878 3.16903 6.75668C3.10591 7.05458 3.11154 7.36295 3.1855 7.65835L4.68758 13.6667C4.79586 14.1002 5.046 14.4851 5.39821 14.7601C5.75042 15.0351 6.18447 15.1845 6.63133 15.1844H14.4563C15.368 15.1845 16.2524 14.8737 16.9636 14.3032C17.6748 13.7328 18.1701 12.9369 18.3678 12.0469L19.674 6.16981H20.873Z"
             fill="black"
           />
-        </svg>
+        </svg></Link>
         <div className="cart-open__card">
           <h2 className="cart-title">My Cart</h2>
           <p className="cart-description">2 item in cart</p>
-          <button className="cart-open__button--viev">View or Edit Your Cart</button>
+          <Link to={"/cart"}><button className="cart-open__button--viev">View or Edit Your Cart</button></Link> 
           <div className="cart-items">
             <div className="cart-item">
                 <h3 className="cart-item__title">1 x</h3>
@@ -94,10 +95,12 @@ const Navigation = () => {
 <path d="M13.5 7L7 13.5" stroke="#A2A6B0" stroke-linecap="round"/>
 </svg>
 
+
 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="10" cy="10.9326" r="9.25" fill="white" stroke="#CACDD8" stroke-width="1.5"/>
 <path d="M6.0472 15.6762H6.10254L8.66678 15.4425C8.94767 15.4146 9.21039 15.2908 9.41083 15.092L14.9452 9.5577C15.16 9.33078 15.276 9.02795 15.268 8.71558C15.2599 8.40322 15.1283 8.10679 14.9021 7.89126L13.2172 6.20636C12.9973 5.99981 12.7092 5.88129 12.4076 5.87335C12.106 5.86541 11.812 5.96861 11.5815 6.16332L6.0472 11.6976C5.84843 11.8981 5.72467 12.1608 5.69669 12.4417L5.43227 15.0059C5.42399 15.096 5.43568 15.1868 5.4665 15.2718C5.49732 15.3569 5.54653 15.434 5.6106 15.4979C5.66806 15.5549 5.7362 15.6 5.81112 15.6306C5.88604 15.6612 5.96627 15.6767 6.0472 15.6762ZM12.3625 7.06726L14.0412 8.746L12.8114 9.94511L11.1634 8.29711L12.3625 7.06726ZM6.88964 12.5462L10.3517 9.10881L12.012 10.7691L8.56839 14.2127L6.72361 14.3849L6.88964 12.5462Z" fill="#A2A6B0"/>
-</svg> </div>
+</svg> 
+</div>
           </div>
               
        

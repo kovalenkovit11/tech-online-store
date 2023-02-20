@@ -1,16 +1,19 @@
 import React from 'react'
-import './style.scss'
 import Card from '../Card/Card'
 import CastomCard from '../CastomCard/CastomCard'
 import NavigateProduct from '../NavigateProduct/NavigateProduct'
 import { laptops } from '../../helpers/laptops'
+import IMAGE from './image30.png'
 
 const Laptops = () => {
   return (
     <div>
     <NavigateProduct/>
     <div className='content-wrapper'>
-    <CastomCard/>
+    <CastomCard text={"Laptops"} style={{
+          backgroundImage:`url(${IMAGE})`
+          
+          }}/>
     {laptops.map((card, index) => {
             return (
               <Card 

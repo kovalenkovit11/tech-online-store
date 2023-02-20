@@ -1,12 +1,16 @@
 import React from 'react'
 import Card from '../Card/Card'
 import CastomCard from '../CastomCard/CastomCard.jsx'
+import image from "./img/image30.jpg"
 import { castomBuilds } from '../../helpers/customBuilds'
 import './style.scss'
 const CustomBuilds = () => {
   return (
     <div className='content-wrapper'>
-        <CastomCard/>
+        <CastomCard text={"Castom"} subTitle={'Builds'} style={{
+          backgroundImage:`url(${image})`
+          
+          }} />
         {castomBuilds.map((card, index) => {
             return (
               <Card 
