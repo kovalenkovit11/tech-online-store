@@ -2,10 +2,11 @@ import React from 'react'
 import { monitors } from '../../helpers/monitors'
 import Card from '../Card/Card'
 import CastomCard from '../CastomCard/CastomCard'
+import image from './image30.png'
 const Monitors = () => {
   return (
     <div className='content-wrapper'>
-    <CastomCard/>
+    <CastomCard text={"Gaming"} subTitle={'Monitors'} style={{backgroundImage:`url(${image})`}}/>
     {monitors.map((card, index) => {
             return (
               <Card 
@@ -14,7 +15,7 @@ const Monitors = () => {
               img={card.img} 
               oldSales={card.oldSales}
               newSales={card.newSales}
-                // index={index}
+              key={index}
               />
             );
           })}

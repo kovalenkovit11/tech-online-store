@@ -1,10 +1,10 @@
 
 import React from 'react'
 import './style.scss'
-const CastomCard = ({text, subTitle , backgroundImage}) => {
+const CastomCard = ({text, subTitle , style}) => {
   return (
     // <div>
-                <div className='castom-card' style={{backgroundImage}} >
+                <div className='castom-card' style={style} >
             <div className='custom-builds'>
             <p>{text}</p>
             <p>{subTitle}</p>

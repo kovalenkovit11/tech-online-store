@@ -33,31 +33,8 @@ const Cart = () => {
               </div>
 
               <div className="cart-qty">
-                {" "}
-                <p>1</p>
-              </div>
-              <p className="cart-price">$13,047.00</p>
-              <div className="cart-svg">
-                <img src={svgDelete} alt="svg delete" />
-                <img src={svgEdit} alt="svg edit" />
-              </div>
-            </div>
-            <div className="cart-total">
-              <div className="cart-image">
-                <img src={cartImg1} alt="cart" />
-                <p className="cart-description">
-                  MSI MEG Trident X 10SD-1012AU Intel i7 10700K, 2070 SUPER,
-                  32GB RAM, 1TB SSD, Windows 10 Home, Gaming Keyboard and Mouse
-                  3 Years Warranty
-                </p>
-              </div>
-              <div>
-                <p className="cart-price">$4,349.00</p>
-              </div>
-
-              <div className="cart-qty">
-                {" "}
-                <p>1</p>
+                
+                <input className="count__input" type="number" min={1} max={100} value={1} />
               </div>
               <p className="cart-price">$13,047.00</p>
               <div className="cart-svg">

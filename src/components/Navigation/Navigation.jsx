@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.scss";
 import cartImage from "./image42.png"
@@ -23,7 +24,7 @@ const Navigation = () => {
       <div>
         <ul className="nav-links">
           <Link to={"/laptops"}><li className="nav-item">Laptops</li></Link>
-          <Link to={"/desctop"}><li className="nav-item">Desktop PCs</li></Link>
+          <Link to={"/desktop"}><li className="nav-item">Desktop PCs</li></Link>
           <Link to={"/network"}><li className="nav-item">Networking Devices</li></Link>
           <Link to={"/printers"}><li className="nav-item">Printers & Scanners</li></Link>
           <Link to={"/pc"}><li className="nav-item">PC Parts</li></Link>
@@ -34,8 +35,11 @@ const Navigation = () => {
       </div>
       <div className="nav-right">
       <div  className="search-input"> 
-      <input className="form-control" type="search" placeholder=""/>
+      <input style={{display: "none"}} className="form-control" type="search" placeholder=""/>
         <svg
+        style={{
+          cursor: 'pointer'
+          }}
           width="19"
           height="19"
           viewBox="0 0 19 19"
@@ -46,7 +50,7 @@ const Navigation = () => {
             d="M16.7061 16.0085L16.7061 16.0085C16.789 16.0914 16.8873 16.1571 16.9955 16.2019C17.1038 16.2468 17.2198 16.2698 17.3369 16.2698C17.4541 16.2698 17.5701 16.2468 17.6783 16.2019C17.7866 16.1571 17.8849 16.0914 17.9678 16.0085C18.0506 15.9257 18.1163 15.8274 18.1611 15.7191C18.206 15.6109 18.229 15.4949 18.229 15.3777C18.229 15.2606 18.206 15.1446 18.1611 15.0363C18.1163 14.9281 18.0506 14.8298 17.9678 14.7469L17.9677 14.7469L14.636 11.416C15.6013 10.135 16.0539 8.53846 15.903 6.93943C15.7493 5.31054 14.9808 3.80139 13.7539 2.719C12.5269 1.63662 10.9337 1.06232 9.29838 1.11292C7.66303 1.16352 6.10838 1.83523 4.95072 2.99141C3.79204 4.14838 3.11812 5.70363 3.06631 7.34023C3.0145 8.97682 3.58868 10.5716 4.67185 11.7995C5.75503 13.0275 7.26567 13.7962 8.89594 13.9491C10.4965 14.0991 12.0941 13.6444 13.3749 12.6766L16.7061 16.0085ZM12.7887 4.25366C13.2263 4.68416 13.5743 5.19703 13.8127 5.76269C14.051 6.32835 14.175 6.93561 14.1775 7.54944C14.18 8.16327 14.061 8.77152 13.8272 9.3391C13.5935 9.90669 13.2497 10.4224 12.8156 10.8564C12.3816 11.2905 11.8659 11.6343 11.2983 11.868C10.7307 12.1018 10.1225 12.2208 9.50865 12.2183C8.89482 12.2158 8.28756 12.0918 7.7219 11.8535C7.15623 11.6151 6.64336 11.2671 6.21287 10.8295C5.35255 9.9551 4.87263 8.77613 4.87762 7.54944C4.88262 6.32275 5.37213 5.14773 6.23954 4.28033C7.10694 3.41292 8.28196 2.92341 9.50865 2.91841C10.7353 2.91342 11.9143 3.39335 12.7887 4.25366Z"
             fill="black"
             stroke="black"
-            stroke-width="0.2"
+            strokeWidth="0.2"
           />
         </svg>
       </div>
@@ -74,13 +78,13 @@ const Navigation = () => {
                 <p className="cart-item__desc">EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...</p>
                 <div className="cart-item__btn">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="10" cy="10" r="9.25" fill="white" stroke="#CACDD8" stroke-width="1.5"/>
-<path d="M7 7L13.5 13.5" stroke="#A2A6B0" stroke-linecap="round"/>
-<path d="M13.5 7L7 13.5" stroke="#A2A6B0" stroke-linecap="round"/>
+<circle cx="10" cy="10" r="9.25" fill="white" stroke="#CACDD8" strokeWidth="1.5"/>
+<path d="M7 7L13.5 13.5" stroke="#A2A6B0" strokeLinecap="round"/>
+<path d="M13.5 7L7 13.5" stroke="#A2A6B0" strokeLinecap="round"/>
 </svg>
 
 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="10" cy="10.9326" r="9.25" fill="white" stroke="#CACDD8" stroke-width="1.5"/>
+<circle cx="10" cy="10.9326" r="9.25" fill="white" stroke="#CACDD8" strokeWidth="1.5"/>
 <path d="M6.0472 15.6762H6.10254L8.66678 15.4425C8.94767 15.4146 9.21039 15.2908 9.41083 15.092L14.9452 9.5577C15.16 9.33078 15.276 9.02795 15.268 8.71558C15.2599 8.40322 15.1283 8.10679 14.9021 7.89126L13.2172 6.20636C12.9973 5.99981 12.7092 5.88129 12.4076 5.87335C12.106 5.86541 11.812 5.96861 11.5815 6.16332L6.0472 11.6976C5.84843 11.8981 5.72467 12.1608 5.69669 12.4417L5.43227 15.0059C5.42399 15.096 5.43568 15.1868 5.4665 15.2718C5.49732 15.3569 5.54653 15.434 5.6106 15.4979C5.66806 15.5549 5.7362 15.6 5.81112 15.6306C5.88604 15.6612 5.96627 15.6767 6.0472 15.6762ZM12.3625 7.06726L14.0412 8.746L12.8114 9.94511L11.1634 8.29711L12.3625 7.06726ZM6.88964 12.5462L10.3517 9.10881L12.012 10.7691L8.56839 14.2127L6.72361 14.3849L6.88964 12.5462Z" fill="#A2A6B0"/>
 </svg> </div>
           </div>
@@ -90,14 +94,14 @@ const Navigation = () => {
                 <p className="cart-item__desc">EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...</p>
                 <div className="cart-item__btn">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="10" cy="10" r="9.25" fill="white" stroke="#CACDD8" stroke-width="1.5"/>
-<path d="M7 7L13.5 13.5" stroke="#A2A6B0" stroke-linecap="round"/>
-<path d="M13.5 7L7 13.5" stroke="#A2A6B0" stroke-linecap="round"/>
+<circle cx="10" cy="10" r="9.25" fill="white" stroke="#CACDD8" strokeWidth="1.5"/>
+<path d="M7 7L13.5 13.5" stroke="#A2A6B0" strokeLinecap="round"/>
+<path d="M13.5 7L7 13.5" stroke="#A2A6B0" strokeLinecap="round"/>
 </svg>
 
 
 <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="10" cy="10.9326" r="9.25" fill="white" stroke="#CACDD8" stroke-width="1.5"/>
+<circle cx="10" cy="10.9326" r="9.25" fill="white" stroke="#CACDD8" strokeWidth="1.5"/>
 <path d="M6.0472 15.6762H6.10254L8.66678 15.4425C8.94767 15.4146 9.21039 15.2908 9.41083 15.092L14.9452 9.5577C15.16 9.33078 15.276 9.02795 15.268 8.71558C15.2599 8.40322 15.1283 8.10679 14.9021 7.89126L13.2172 6.20636C12.9973 5.99981 12.7092 5.88129 12.4076 5.87335C12.106 5.86541 11.812 5.96861 11.5815 6.16332L6.0472 11.6976C5.84843 11.8981 5.72467 12.1608 5.69669 12.4417L5.43227 15.0059C5.42399 15.096 5.43568 15.1868 5.4665 15.2718C5.49732 15.3569 5.54653 15.434 5.6106 15.4979C5.66806 15.5549 5.7362 15.6 5.81112 15.6306C5.88604 15.6612 5.96627 15.6767 6.0472 15.6762ZM12.3625 7.06726L14.0412 8.746L12.8114 9.94511L11.1634 8.29711L12.3625 7.06726ZM6.88964 12.5462L10.3517 9.10881L12.012 10.7691L8.56839 14.2127L6.72361 14.3849L6.88964 12.5462Z" fill="#A2A6B0"/>
 </svg> 
 </div>

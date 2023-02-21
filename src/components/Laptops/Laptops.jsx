@@ -10,7 +10,7 @@ const Laptops = () => {
     <div>
     <NavigateProduct/>
     <div className='content-wrapper'>
-    <CastomCard text={"Laptops"} style={{
+    <CastomCard text={"MSI"} subTitle={'Laptops'} style={{
           backgroundImage:`url(${IMAGE})`
           
           }}/>
@@ -22,7 +22,7 @@ const Laptops = () => {
               img={card.img} 
               oldSales={card.oldSales}
               newSales={card.newSales}
-                // index={index}
+              key={index}
               />
             );
           })}

@@ -19,7 +19,7 @@ const CustomBuilds = () => {
               img={card.img} 
               oldSales={card.oldSales}
               newSales={card.newSales}
-                // index={index}
+              key={index}
               />
             );
           })}

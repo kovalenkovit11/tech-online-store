@@ -263,3 +263,22 @@ a{
     }
   }
 }
+.count__input::-webkit-inner-spin-button,.count__input::-webkit-outher-spin-button {
+  -webkit-appearance: none;
+ 
+}
+.count__input{
+  width: 16px;
+  background: #f5f7ff;
+  border: none;
+}
+.count__input:focus{
+  outline: 2px ;
+  outline-color: #a2a6b0;
+  outline-style: solid;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
