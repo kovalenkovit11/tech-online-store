@@ -20,7 +20,7 @@ const Cart = () => {
         return{ 
           ...product,
           count: product.count +1,
-          priceTotal: product.count * product.newSales
+          priceTotal: (product.count + 1) * product.newSales
         };
       }
       return product
@@ -28,11 +28,37 @@ const Cart = () => {
    })
   }
   const decrease =(id)=>{
-    console.log("decrease" , id)
-  }
+    setCard((cart) =>{
+     return cart.map((product)=>{
+       if(product.id === id){
+         return{ 
+           ...product,
+           count: product.count - 1 > 1? product.count -1 : 1,
+           priceTotal: (product.count - 1 > 1 ? product.count -1 : 1) * product.newSales
+         };
+       }
+       return product
+     })
+    })
+   }
+   const changeValue = (id , value) => {
+setCard((cart) =>{
+  return cart.map((product)=>{
+    if(product.id === id){
+      return{ 
+      ...product,
+        count: value,
+        priceTotal: value * product.price,
+        
+      };
+    }
+    return product
+  })
+})
+   }
 
   const products = card.map((product) =>{
-    return <CardInCart deleteProduct={deleteProduct} product={product} key={product.id} increase={increase} decrease={decrease}/>
+    return <CardInCart deleteProduct={deleteProduct} product={product} key={product.id} increase={increase} decrease={decrease} changeValue= {changeValue}/>
   })
   return (
      <div className="container">
