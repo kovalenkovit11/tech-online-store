@@ -8,6 +8,7 @@ import Monitors from '../Monitors/Monitors';
 import Brands from '../Brands/Brands';
 import FollowUs from '../FollowUs/FollowUs';
 import Comments from '../Comments/Comments';
+import { Link } from 'react-router-dom';
 const Main = () => {
   return (
     <div className='main-wrapper'>
@@ -15,7 +16,7 @@ const Main = () => {
 
       <div className='main-header'>
         <h3 className='main-title'>New Products</h3>
-        <a href='/#'>See All New Products</a>
+        <Link to='/#'>See All New Products</Link>
       </div>
       <NewProducts/>
       <CustomBuilds/>

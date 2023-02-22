@@ -1,6 +1,7 @@
 
 import React from 'react'
 import './style.scss'
+import { Link } from 'react-router-dom'
 const CastomCard = ({text, subTitle , style}) => {
   return (
     // <div>
@@ -9,7 +10,7 @@ const CastomCard = ({text, subTitle , style}) => {
             <p>{text}</p>
             <p>{subTitle}</p>
             </div>
-                <a className='castom-builds__link' href='/#'>See All Products</a>
+            <Link className='castom-builds__link' to={'/'}>See All Products</Link>
         </div>    
     // </div>
   )

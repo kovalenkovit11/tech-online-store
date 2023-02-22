@@ -5,15 +5,15 @@ import NavigateProduct from '../NavigateProduct/NavigateProduct'
 import { laptops } from '../../helpers/laptops'
 import IMAGE from './image30.png'
 
+
 const Laptops = () => {
   return (
     <div>
     <NavigateProduct/>
     <div className='content-wrapper'>
-    <CastomCard text={"MSI"} subTitle={'Laptops'} style={{
-          backgroundImage:`url(${IMAGE})`
-          
-          }}/>
+   
+    <CastomCard text={"MSI"} subTitle={'Laptops'} style={{backgroundImage:`url(${IMAGE})`}}/>
+
     {laptops.map((card, index) => {
             return (
               <Card 

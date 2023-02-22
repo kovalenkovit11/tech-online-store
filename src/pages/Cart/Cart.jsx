@@ -1,12 +1,39 @@
 
 import React from "react";
-import cartImg1 from "./image51.png";
-import svgDelete from "../../components/Navigation/delete.svg";
-import svgEdit from "../../components/Navigation/edit.svg";
-import payPal from "../../components/Navigation/payPal.svg";
-import zip from "../../components/Main/img/primary1.svg";
+import { cards } from '../../helpers/cards';
+import { useState } from "react";
 import "./style.scss";
+import CardInCart from "../../components/CardInCart/CardInCart";
+import CartSummary from "../../components/CartSummary/CartSummary";
 const Cart = () => {
+  const [card, setCard] = useState(cards)
+
+  const deleteProduct = (id) =>{
+   setCard((card)=> card.filter((product)=> id !== product.id))
+  }
+
+
+  const increase =(id)=>{
+   setCard((cart) =>{
+    return cart.map((product)=>{
+      if(product.id === id){
+        return{ 
+          ...product,
+          count: product.count +1,
+          priceTotal: product.count * product.newSales
+        };
+      }
+      return product
+    })
+   })
+  }
+  const decrease =(id)=>{
+    console.log("decrease" , id)
+  }
+
+  const products = card.map((product) =>{
+    return <CardInCart deleteProduct={deleteProduct} product={product} key={product.id} increase={increase} decrease={decrease}/>
+  })
   return (
      <div className="container">
       <div className="cart-left">
@@ -19,29 +46,7 @@ const Cart = () => {
               <li className="cart-item__qty">Qty</li>
               <li className="cart-item__subtotal">Subtotal</li>
             </ul>
-            <div className="cart-total">
-              <div className="cart-image">
-                <img src={cartImg1} alt="cart" />
-                <p className="cart-description">
-                  MSI MEG Trident X 10SD-1012AU Intel i7 10700K, 2070 SUPER,
-                  32GB RAM, 1TB SSD, Windows 10 Home, Gaming Keyboard and Mouse
-                  3 Years Warranty
-                </p>
-              </div>
-              <div>
-                <p className="cart-price">$4,349.00</p>
-              </div>
-
-              <div className="cart-qty">
-                
-                <input className="count__input" type="number" min={1} max={100} value={1} />
-              </div>
-              <p className="cart-price">$13,047.00</p>
-              <div className="cart-svg">
-                <img src={svgDelete} alt="svg delete" />
-                <img src={svgEdit} alt="svg edit" />
-              </div>
-            </div>
+            {products}
           </div>
           <div className="cart-btn">
             <div className="">
@@ -57,59 +62,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
-      <div className="cart-right">
-        <div className="cart-right__background">
-        <div className="cart-container">
-        <div className="cart-right__header">
-            <h1>Summary</h1>
-            <p>Estimate Shipping and Tax</p>
-            <p className="cart-right__header--desc">Enter your destination to get a shipping estimate.</p>
-            <p>Apply Discount Code</p>
-          </div>
-          <div className="cart-right_body">
-            <div className="cart cart-right__subtotal">
-              <p>Subtotal</p>
-              <p>$4,349.00</p>
-            </div>
-            <div className="cart cart-right__shipping">
-              <p>Shipping</p>
-              <p>$13,047.00</p>
-            </div>
-            <p className="shipping_description">
-              (Standard Rate - Price may vary depending on the item/destination.
-              TECS Staff will contact you.)
-            </p>
-            <div className="cart cart-right__tax">
-              <p>Tax</p>
-              <p>$0.00</p>
-            </div>
-            <div className="cart cart-right__gst">
-              <p>GST (10%)</p>
-              <p>$1.91</p>
-            </div>
-            <div className="cart cart-right__total">
-              <p>Order Total</p>
-              <p>$13,047.00</p>
-            </div>
-          </div>
-          <div className="cart-right__btn">
-            <button className="cart__btn btn-proceed">
-              Proceed to Checkout
-            </button>
-            <button className="cart__btn btn-pay">
-              Check out with <img src={payPal} alt="payPal" />
-            </button>
-            <button className="cart__btn btn-check disabled">
-              Check Out with Multiple Addresses
-            </button>
-          </div>
-          <div className="cart-right__banner">
-            <img width={'66px'} height={'21px'} style={{"border-right": "2px solid #00AEB8"}} src={zip} alt="zip" />
-            <p><span>own</span> it now, up to 6 months interest free <a href="#!">learn more</a></p>
-          </div>
-        </div>
-        </div>
-      </div>
+        <CartSummary/>
     </div>
   );
 };
