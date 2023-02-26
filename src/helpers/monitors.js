@@ -8,8 +8,9 @@ const monitors =[
 inStock: 'in stock',
 img: imgFirst,
 desc: "EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...",
-oldSales: "$499.00",
-newSales: "$499.00",
+oldSales: 800,
+newSales: 468,
+count: 1,
 id: 1
 },
 
@@ -17,32 +18,36 @@ id: 1
     inStock: 'in stock',
     img: imgSecond,
     desc: "EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...",
-    oldSales: "$700,00",
-    newSales: "$499.00",
+    oldSales: 600,
+    newSales: 499,
+    count: 1,
     id: 2
     },
     {
         inStock: 'in stock',
         img: imgThird,
         desc: "EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...",
-        oldSales: "$700,00",
-        newSales: "$549.00",
+        oldSales: 499,
+        newSales: 230,
+        count: 1,
         id: 3
         },
         {
             inStock: 'in stock',
             img: imgThird,
             desc: "EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...",
-            oldSales: "$700,00",
-            newSales: "$699.00",
+            oldSales: 499,
+            newSales: 300,
+            count: 1,
             id: 4
             },
             {
                 inStock: 'in stock',
                 img: imgSecond,
                 desc: "EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...",
-                oldSales: "$700,00",
-                newSales: "$499.00",
+                oldSales: 499,
+                newSales: 389,
+                count: 1,
                 id: 5
                 },
 

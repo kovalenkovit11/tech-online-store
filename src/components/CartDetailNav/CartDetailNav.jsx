@@ -1,10 +1,39 @@
 import React from 'react'
 import './style.scss'
-import CloseCardBtn from '../CloseCardBtn/CloseCardBtn'
-import EditCardBtn from '../EditCardBtn/EditCardBtn'
 import { Link } from 'react-router-dom'
-import cartImage from "./../../pages/Cart/image52.png"
-const CartDetailNav = ({count}) => {
+import { useContext } from 'react'
+// import {useEffect, useState} from 'react'
+import { CardContext } from "../../../src/App.js";
+import CardInMiniCart from '../CardInMiniCart/CardInMiniCart'
+
+const CartDetailNav = () => {
+  const {card, setCard} = useContext(CardContext)
+  console.log(card)
+  const priceTotal= card.reduce((prev, curr)=>{return prev + curr.newSales}, 0)
+  // const [total, setTotal] = useState({
+  //   priceTotal: added.reduce((prev, curr)=>{return prev + curr.priceTotal}, 0),
+  //   count: added.reduce((prev, curr)=>{return prev + curr.count}, 0)
+  // })
+  // useEffect(()=>{
+  //   setTotal({
+  //     priceTotal: added.reduce((prev, curr)=>{return prev + curr.priceTotal}, 0),
+  //     count: added.reduce((prev, curr)=>{return prev + curr.count}, 0)
+  //   })
+  // },[added])
+
+
+  const deleteProduct = (id) =>{
+  setCard((card)=> card.filter((product)=> id !== product.id))
+  }
+
+
+
+ 
+
+  const products = card.map((card) =>{
+    return  <CardInMiniCart card={card} deleteProduct={deleteProduct}/>
+
+  })
   return (
     <div className="cart-detail">
     <Link to={"/cart"}>
@@ -36,36 +65,19 @@ const CartDetailNav = ({count}) => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                opacity: '0'
+                opacity: card.length ? "1": "0"
                 
-       }}>{count}</p></div></Link>
-       <div className="cart-open__card">
-         <h2 className="cart-title">My Cart</h2>
-         <p className="cart-description">2 item in cart</p>
-         <Link to={"/cart"}><button className="cart-open__button--viev">View or Edit Your Cart</button></Link> 
-         <div className="cart-items">
-           <div className="cart-item">
-               <h3 className="cart-item__title">1 x</h3>
-               <img style={{
-                maxWidth: '65px', 
-                maxHeight: '65px'
-                }} 
-                src={cartImage} 
-                alt="" />
-               <p className="cart-item__desc">EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...</p>
-               <div className="cart-item__btn">
-            <CloseCardBtn/>
-            <EditCardBtn/>
-            </div>
-         </div>
-             
-      
-       </div>
-       <div className="cart-footer">
-         <p>Subtotal: <span> $499.00</span></p>
-         <button className="cart-btn__footer-check">Go to Checkout</button>
-         <button className="cart-btn__footer-paypal">Check out with  
-         <svg width="72" height="19" viewBox="0 0 72 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+       }}>{card.length}</p></div></Link>
+        <div className="cart-open__card">
+    <h2 className="cart-title">My Cart</h2>
+    <p className="cart-description">{card.length} Items in cart</p>
+    <Link to={"/cart"}><button className="cart-open__button--viev">View or Edit Your Cart</button></Link> 
+    <div key={card.id}>{products}</div>
+  <div className="cart-footer">
+    <p>Subtotal: <span> {priceTotal}, 00</span></p>
+    <button className="cart-btn__footer-check">Go to Checkout</button>
+    <button className="cart-btn__footer-paypal">Check out with  
+    <svg width="72" height="19" viewBox="0 0 72 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M55.6932 5.04547H52.0409C51.8261 5.04547 51.6113 5.256 51.5039 5.46652L50 14.7297C50 14.9402 50.1074 15.0455 50.3223 15.0455H52.2558C52.4706 15.0455 52.578 14.9402 52.578 14.7297L53.0077 12.0981C53.0077 11.8876 53.2225 11.6771 53.5448 11.6771H54.7264C57.197 11.6771 58.5935 10.5192 58.9157 8.20337C59.1306 7.256 58.9157 6.41389 58.486 5.88758C57.8415 5.36126 56.8748 5.04547 55.6932 5.04547ZM56.1228 8.51916C55.908 9.78231 54.9412 9.78231 53.9745 9.78231H53.33L53.7596 7.36126C53.7596 7.256 53.8671 7.15073 54.0819 7.15073H54.2967C54.9412 7.15073 55.5858 7.15073 55.908 7.57179C56.1228 7.67705 56.1228 7.99284 56.1228 8.51916Z" fill="#139AD6"/>
 <path d="M27.6567 4.64545H23.771C23.5425 4.64545 23.3139 4.87402 23.1996 5.10259L21.5996 15.1597C21.5996 15.3883 21.7139 15.5026 21.9425 15.5026H23.771C23.9996 15.5026 24.2282 15.274 24.3425 15.0454L24.7996 12.3026C24.7996 12.074 25.0282 11.8454 25.371 11.8454H26.6282C29.2567 11.8454 30.7424 10.5883 31.0853 8.07401C31.3139 7.04544 31.0853 6.13116 30.6282 5.55973C29.9424 4.9883 29.0282 4.64545 27.6567 4.64545ZM28.1139 8.41687C27.8853 9.78829 26.8567 9.78829 25.8282 9.78829H25.2567L25.7139 7.15973C25.7139 7.04544 25.8282 6.93115 26.0567 6.93115H26.2853C26.971 6.93115 27.6567 6.93115 27.9996 7.3883C28.1139 7.50258 28.2282 7.84544 28.1139 8.41687Z" fill="#263B80"/>
 <path d="M39.4282 8.30261H37.5996C37.4854 8.30261 37.2568 8.41689 37.2568 8.53118L37.1425 9.1026L37.0282 8.87403C36.5711 8.30261 35.7711 8.07404 34.8568 8.07404C32.7997 8.07404 30.9711 9.67403 30.6282 11.8455C30.3997 12.9883 30.7425 14.0169 31.3139 14.7026C31.8854 15.3883 32.6854 15.6169 33.7139 15.6169C35.4282 15.6169 36.3425 14.5883 36.3425 14.5883L36.2282 15.1597C36.2282 15.3883 36.3425 15.5026 36.5711 15.5026H38.2854C38.5139 15.5026 38.7425 15.274 38.8568 15.0454L39.8854 8.64546C39.7711 8.53118 39.5425 8.30261 39.4282 8.30261ZM36.7996 11.9597C36.5711 12.9883 35.7711 13.7883 34.6282 13.7883C34.0568 13.7883 33.5997 13.5597 33.3711 13.3312C33.1425 12.9883 33.0282 12.5312 33.0282 11.9597C33.1425 10.9312 34.0568 10.1312 35.0854 10.1312C35.6568 10.1312 35.9996 10.3597 36.3425 10.5883C36.6854 10.9312 36.7996 11.5026 36.7996 11.9597Z" fill="#263B80"/>
@@ -76,9 +88,9 @@ const CartDetailNav = ({count}) => {
 <path d="M13.712 4.04547C13.712 4.16312 13.712 4.28077 13.712 4.39841C12.9566 8.39841 10.5826 9.69253 7.45314 9.69253H5.83448C5.51075 9.69253 5.18702 10.0455 5.07911 10.3984L4 17.5749C4 17.8102 4.10791 18.0455 4.43164 18.0455H7.23732C7.56105 18.0455 7.88479 17.8102 7.88479 17.4572V17.3396L8.42434 13.6925V13.4572C8.42434 13.1043 8.74807 12.869 9.07181 12.869H9.50345C12.2012 12.869 14.3594 11.6925 14.899 8.16312C15.1148 6.75135 15.0069 5.45724 14.3594 4.63371C14.2515 4.39841 14.0357 4.16312 13.712 4.04547Z" fill="#139AD6"/>
 <path d="M13 4.39547C12.8889 4.39547 12.7778 4.2788 12.6667 4.2788C12.5556 4.2788 12.4444 4.2788 12.3333 4.16214C11.8889 4.04547 11.4444 4.04547 10.8889 4.04547H6.55556C6.44444 4.04547 6.33333 4.04547 6.22222 4.16214C6 4.2788 5.88889 4.51214 5.88889 4.74547L5 10.8121V11.0455C5.11111 10.6955 5.44444 10.3455 5.77778 10.3455H7.44444C10.6667 10.3455 13.1111 8.94547 13.8889 5.09547C13.8889 4.9788 13.8889 4.86214 14 4.74547C13.7778 4.6288 13.6667 4.51214 13.4444 4.51214C13.1111 4.39547 13.1111 4.39547 13 4.39547Z" fill="#232C65"/>
 </svg>
-         </button>
-       </div>
-    </div>
+    </button>
+  </div>
+</div>
        
      </div>
   )

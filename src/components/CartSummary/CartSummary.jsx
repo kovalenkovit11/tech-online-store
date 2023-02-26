@@ -4,7 +4,9 @@ import payPal from "../../components/Navigation/payPal.svg";
 import zip from "../../components/Main/img/primary1.svg";
 
 
-const CartSummary = () => {
+const CartSummary = ({total}) => {
+  const {count, priceTotal} = total;
+  const priceFormatter= new Intl.NumberFormat('de-DE')
   return (
     <div className="cart-right">
     <div className="cart-right__background">
@@ -17,12 +19,12 @@ const CartSummary = () => {
       </div>
       <div className="cart-right_body">
         <div className="cart cart-right__subtotal">
-          <p>Subtotal</p>
-          <p>$4,349.00</p>
+          <p>Count</p>
+          <p> {count}</p>
         </div>
         <div className="cart cart-right__shipping">
-          <p>Shipping</p>
-          <p>$13,047.00</p>
+          <p>Subtotal</p>
+          <p>$ {priceFormatter.format(priceTotal)},00</p>
         </div>
         <p className="shipping_description">
           (Standard Rate - Price may vary depending on the item/destination.
@@ -30,15 +32,15 @@ const CartSummary = () => {
         </p>
         <div className="cart cart-right__tax">
           <p>Tax</p>
-          <p>$0.00</p>
+          <p>$ 0.00</p>
         </div>
         <div className="cart cart-right__gst">
-          <p>GST (10%)</p>
-          <p>$1.91</p>
+          <p>GST (0%)</p>
+          <p>$ 0</p>
         </div>
         <div className="cart cart-right__total">
           <p>Order Total</p>
-          <p>$13,047.00</p>
+          <p>$ {priceFormatter.format(priceTotal)},00</p>
         </div>
       </div>
       <div className="cart-right__btn">

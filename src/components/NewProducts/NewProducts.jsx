@@ -8,7 +8,7 @@ const NewProducts = () => {
     <div>
     <div className='main-content'>
     
-    {cards.map((card, index) => {
+    {cards.map((card, id) => {
             return (
               <Card 
               inStock={card.inStock}
@@ -16,7 +16,7 @@ const NewProducts = () => {
               img={card.img} 
               oldSales={card.oldSales}
               newSales={card.newSales}
-                key={index}
+                key={id}
               />
             );
           })}

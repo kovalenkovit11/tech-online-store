@@ -1,9 +1,17 @@
-import React from 'react'
+import {useContext} from 'react'
+
+import { CardContext } from "../../../src/App.js";
 import BtnBuyNow from '../BtnBuyNow/BtnBuyNow'
 import './style.scss'
-const Card = ({inStock,img,desc,oldSales,newSales}) => {
 
-  
+const Card = ({inStock,img,desc,oldSales,newSales, id, count}) => {
+  const {card, setCard } = useContext(CardContext);
+  console.log(card)
+  const addItems= () =>{
+     const newCard =[...card, {inStock,img,desc,oldSales,newSales,id, count}]
+     setCard(newCard)
+
+  }
   return (
     <div>
         <div className='main-card'>
@@ -34,9 +42,9 @@ const Card = ({inStock,img,desc,oldSales,newSales}) => {
       <div className="main-content__description"><p>{desc}</p>
       </div>
       <div className="main-content__sale">
-        <p className='sale-old'>{oldSales}</p>
-        <p className='sale-new'>{newSales}</p>
-        <BtnBuyNow/>
+        <p className='sale-old'>${oldSales},00</p>
+        <p className='sale-new'>${newSales},00</p>
+        <BtnBuyNow text={'Buy Now'} onClick= {addItems}/>
       </div>
     </div>
     </div>

@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { createContext, useState } from "react";
 
 import "./App.css";
 import Header from "./components/Header/Header";
@@ -7,8 +8,18 @@ import Footer from "./components/Footer/Footer";
 import Cart from "./pages/Cart/Cart";
 import Page404 from "./pages/Page404/Page404";
 
+export const CardContext = createContext({
+  card: [],
+  setCard: () => {}
+});
+
+
 function App() {
+  const [card, setCard] = useState([])
+
+  const value = {card, setCard}
   return (
+    <CardContext.Provider value={value}>
     <div className="App">
       <Router>
         <Header />
@@ -28,6 +39,7 @@ function App() {
         <Footer />
       </Router>
     </div>
+    </CardContext.Provider>
   );
 }
 
