@@ -8,7 +8,6 @@ import CloseCardBtn from '../CloseCardBtn/CloseCardBtn'
 const CardInMiniCart = ({ card, deleteProduct}) => {
 
     const { img, desc, id, count  } = card;
-console.log(card)
   return (
  <div className="cart-items">
 <div className="cart-item">

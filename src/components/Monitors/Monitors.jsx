@@ -7,7 +7,7 @@ const Monitors = () => {
   return (
     <div className='content-wrapper'>
     <CastomCard text={"Gaming"} subTitle={'Monitors'} style={{backgroundImage:`url(${image})`}}/>
-    {monitors.map((card, index) => {
+    {monitors.map((card) => {
             return (
               <Card 
               inStock={card.inStock}
@@ -15,7 +15,9 @@ const Monitors = () => {
               img={card.img} 
               oldSales={card.oldSales}
               newSales={card.newSales}
-              key={index}
+              id={card.id}
+                count={card.count}
+                key={card.id}
               />
             );
           })}

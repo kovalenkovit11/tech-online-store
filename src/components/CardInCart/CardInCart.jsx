@@ -1,5 +1,4 @@
 import React from "react";
-// import cartImg1 from "../../pages/Cart/image51.png";
 import CloseCardBtn from "../CloseCardBtn/CloseCardBtn";
 
 const CardInCart = ({
@@ -7,9 +6,12 @@ const CardInCart = ({
   deleteProduct,
   increase,
   decrease,
-  changeValue,
+  // priceTotal,
+  // changeValue,
 }) => {
-  const { img, desc, newSales, priceTotal, count, id } = product;
+  const { img, desc, newSales, count,  id,  } = product;
+  const priceSummary = newSales * count
+  
   const priceFormatter= new Intl.NumberFormat()
   return (
     <div className="cart-total">
@@ -32,7 +34,7 @@ const CardInCart = ({
           className="count__input"
           type="number"
           onChange={(e) => {
-            changeValue(id, +e.target.value);
+            // changeValue(id, +e.target.value);
           }}
           min={1}
           max={100}
@@ -85,7 +87,7 @@ const CardInCart = ({
           </svg>
         </div>
       </div>
-      <p className="cart-price">{priceFormatter.format(priceTotal)},00</p>
+      <p className="cart-price">{priceFormatter.format(priceSummary)},00</p>
       <div className="cart-svg">
         <CloseCardBtn deleteProduct={deleteProduct} id={id} />
       </div>

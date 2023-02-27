@@ -11,7 +11,7 @@ desc: "EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...",
 oldSales: 499,
 newSales: 499,
 count: 1,
-id: 1
+id: 12
 },
 
 {
@@ -21,7 +21,7 @@ id: 1
     oldSales: 499,
     newSales: 499,
     count: 1,
-    id: 2
+    id: 13
     },
     {
         inStock: 'in stock',
@@ -30,7 +30,7 @@ id: 1
         oldSales: 499,
         newSales: 499,
         count: 1,
-        id: 3
+        id: 14
         },
         {
             inStock: 'in stock',
@@ -39,7 +39,7 @@ id: 1
             oldSales: 499,
             newSales: 499,
             count: 1,
-            id: 4
+            id: 15
             },
             {
                 inStock: 'in stock',
@@ -48,7 +48,7 @@ id: 1
                 oldSales: 499,
                 newSales: 499,
                 count: 1,
-                id: 5
+                id: 16
                 },
 
 

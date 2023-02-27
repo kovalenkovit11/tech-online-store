@@ -10,7 +10,7 @@ const Desktops = () => {
     <NavigateProduct/>
     <div className='content-wrapper'>
     <CastomCard text={"Desktops"} style={{backgroundImage:`url(${image})`}}/>
-    {desktops.map((card, index) => {
+    {desktops.map((card) => {
             return (
               <Card 
               inStock={card.inStock}
@@ -18,7 +18,9 @@ const Desktops = () => {
               img={card.img} 
               oldSales={card.oldSales}
               newSales={card.newSales}
-              key={index}
+              key={card.id}
+              id={card.id}
+                count={card.count}
               />
             );
           })}

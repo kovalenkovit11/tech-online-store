@@ -12,7 +12,7 @@ const castomBuilds = [
         oldSales: 499,
         newSales: 499,
         count: 1,
-        id: 1
+        id: 7
         },{
             inStock: 'in stock',
             img: imgSecond,
@@ -20,7 +20,7 @@ const castomBuilds = [
             oldSales: 499,
             newSales: 499,
             count: 1,
-            id: 2
+            id: 8
             },{
                 inStock: 'in stock',
                 img: imgThird,
@@ -28,7 +28,7 @@ const castomBuilds = [
                 oldSales: 499,
                 newSales: 499,
                 count: 1,
-                id: 3
+                id: 9
                 },{
                     inStock: 'in stock',
                     img: imgFour,
@@ -36,7 +36,7 @@ const castomBuilds = [
                     oldSales: 499,
                     newSales: 499,
                     count: 1,
-                    id: 4
+                    id: 10
                     },{
                         inStock: 'in stock',
                         img: imgFive,
@@ -44,7 +44,7 @@ const castomBuilds = [
                         oldSales: 499,
                         newSales: 499,
                         count: 1,
-                        id: 5
+                        id: 11
                         },
 ]
 

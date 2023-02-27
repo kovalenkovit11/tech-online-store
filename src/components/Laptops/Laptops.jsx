@@ -14,7 +14,7 @@ const Laptops = () => {
    
     <CastomCard text={"MSI"} subTitle={'Laptops'} style={{backgroundImage:`url(${IMAGE})`}}/>
 
-    {laptops.map((card, index) => {
+    {laptops.map((card) => {
             return (
               <Card 
               inStock={card.inStock}
@@ -22,7 +22,9 @@ const Laptops = () => {
               img={card.img} 
               oldSales={card.oldSales}
               newSales={card.newSales}
-              key={index}
+              id={card.id}
+                count={card.count}
+                key={card.id}
               />
             );
           })}

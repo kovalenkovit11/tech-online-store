@@ -4,8 +4,7 @@ import payPal from "../../components/Navigation/payPal.svg";
 import zip from "../../components/Main/img/primary1.svg";
 
 
-const CartSummary = ({total}) => {
-  const {count, priceTotal} = total;
+const CartSummary = ({priceTotal, count}) => {
   const priceFormatter= new Intl.NumberFormat('de-DE')
   return (
     <div className="cart-right">

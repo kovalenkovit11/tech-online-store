@@ -6,20 +6,9 @@ import { useContext } from 'react'
 import { CardContext } from "../../../src/App.js";
 import CardInMiniCart from '../CardInMiniCart/CardInMiniCart'
 
-const CartDetailNav = () => {
+const CartDetailNav = ({id}) => {
   const {card, setCard} = useContext(CardContext)
-  console.log(card)
   const priceTotal= card.reduce((prev, curr)=>{return prev + curr.newSales}, 0)
-  // const [total, setTotal] = useState({
-  //   priceTotal: added.reduce((prev, curr)=>{return prev + curr.priceTotal}, 0),
-  //   count: added.reduce((prev, curr)=>{return prev + curr.count}, 0)
-  // })
-  // useEffect(()=>{
-  //   setTotal({
-  //     priceTotal: added.reduce((prev, curr)=>{return prev + curr.priceTotal}, 0),
-  //     count: added.reduce((prev, curr)=>{return prev + curr.count}, 0)
-  //   })
-  // },[added])
 
 
   const deleteProduct = (id) =>{
@@ -31,7 +20,7 @@ const CartDetailNav = () => {
  
 
   const products = card.map((card) =>{
-    return  <CardInMiniCart card={card} deleteProduct={deleteProduct}/>
+    return  <CardInMiniCart card={card} deleteProduct={deleteProduct} id={id} key={card.id}/>
 
   })
   return (
@@ -72,7 +61,7 @@ const CartDetailNav = () => {
     <h2 className="cart-title">My Cart</h2>
     <p className="cart-description">{card.length} Items in cart</p>
     <Link to={"/cart"}><button className="cart-open__button--viev">View or Edit Your Cart</button></Link> 
-    <div key={card.id}>{products}</div>
+    <div>{products}</div>
   <div className="cart-footer">
     <p>Subtotal: <span> {priceTotal}, 00</span></p>
     <button className="cart-btn__footer-check">Go to Checkout</button>

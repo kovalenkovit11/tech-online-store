@@ -11,7 +11,7 @@ const CustomBuilds = () => {
           backgroundImage:`url(${image})`
           
           }} />
-        {castomBuilds.map((card, index) => {
+        {castomBuilds.map((card) => {
             return (
               <Card 
               inStock={card.inStock}
@@ -19,7 +19,9 @@ const CustomBuilds = () => {
               img={card.img} 
               oldSales={card.oldSales}
               newSales={card.newSales}
-              key={index}
+              key={card.id}
+              id={card.id}
+                count={card.count}
               />
             );
           })}

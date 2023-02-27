@@ -6,11 +6,9 @@ import './style.scss'
 
 const Card = ({inStock,img,desc,oldSales,newSales, id, count}) => {
   const {card, setCard } = useContext(CardContext);
-  console.log(card)
   const addItems= () =>{
-     const newCard =[...card, {inStock,img,desc,oldSales,newSales,id, count}]
+     const newCard =[...card, {inStock,img,desc,oldSales,newSales, id, count}]
      setCard(newCard)
-
   }
   return (
     <div>
