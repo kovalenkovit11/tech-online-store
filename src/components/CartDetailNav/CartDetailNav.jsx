@@ -27,7 +27,8 @@ const CartDetailNav = ({id}) => {
     <div className="cart-detail">
     <Link to={"/cart"}>
  <div style={{display: 'flex',
-            alignItems: 'center'}}>   <svg
+            alignItems: 'center'}}>  
+             <svg style={{marginTop: '2px'}}
          width="25"
          height="25"
          viewBox="0 0 25 25"

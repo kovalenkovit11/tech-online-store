@@ -7,7 +7,6 @@ import { CardContext } from "../../../src/App.js";
 const Cart = () => {
   const { card, setCard } = useContext(CardContext);
   const priceTotal = card.reduce((prev, curr) => prev + curr.newSales, 0);
-  // const priceSummary= card.newSales * card.count
 
 console.log(priceTotal,"cart")
   const deleteProduct = (id) => {
@@ -44,20 +43,20 @@ console.log(priceTotal,"cart")
       });
     });
   };
-  const changeValue = (id, value) => {
-    setCard((card) => {
-      return card.map((product) => {
-        if (product.id === id) {
-          return {
-            ...product,
-            count: value,
-            priceTotal: value * product.newSales,
-          };
-        }
-        return product;
-      });
-    });
-  };
+  // const changeValue = (id, value) => {
+  //   setCard((card) => {
+  //     return card.map((product) => {
+  //       if (product.id === id) {
+  //         return {
+  //           ...product,
+  //           count: value,
+  //           priceTotal: value * product.newSales,
+  //         };
+  //       }
+  //       return product;
+  //     });
+  //   });
+  // };
   console.log(card)
   const products = card.map((product) => {
     return (
@@ -68,8 +67,6 @@ console.log(priceTotal,"cart")
         increase={increase}
         decrease={decrease}
         // changeValue={changeValue}
-        // priceSummary={priceSummary}
-        // priceTotal={priceTotal}
       />
     );
   });
