@@ -8,7 +8,7 @@ const NewProducts = () => {
     <div>
     <div className='main-content'>
     
-    {cards.map((card) => {
+    {cards.map((card) => { 
             return (
               <Card 
               inStock={card.inStock}

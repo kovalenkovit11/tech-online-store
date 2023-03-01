@@ -6,9 +6,8 @@ import { CardContext } from "../../../src/App.js";
 
 const Cart = () => {
   const { card, setCard } = useContext(CardContext);
-  const priceTotal = card.reduce((prev, curr) => prev + curr.newSales, 0);
+  const priceTotal = card.reduce((prev, curr) => (prev + curr.count * curr.newSales ) , 0);
 
-console.log(priceTotal,"cart")
   const deleteProduct = (id) => {
     setCard((card) => card.filter((product) => id !== product.id));
   };
@@ -43,21 +42,20 @@ console.log(priceTotal,"cart")
       });
     });
   };
-  // const changeValue = (id, value) => {
-  //   setCard((card) => {
-  //     return card.map((product) => {
-  //       if (product.id === id) {
-  //         return {
-  //           ...product,
-  //           count: value,
-  //           priceTotal: value * product.newSales,
-  //         };
-  //       }
-  //       return product;
-  //     });
-  //   });
-  // };
-  console.log(card)
+  const changeValue = (id, value) => {
+    setCard((card) => {
+      return card.map((product) => {
+        if (product.id === id) {
+          return {
+            ...product,
+            count: value,
+            priceTotal: value * product.newSales,
+          };
+        }
+        return product;
+      });
+    });
+  };
   const products = card.map((product) => {
     return (
       <CardInCart
@@ -66,7 +64,7 @@ console.log(priceTotal,"cart")
         key={product.id}
         increase={increase}
         decrease={decrease}
-        // changeValue={changeValue}
+        changeValue={changeValue}
       />
     );
   });
