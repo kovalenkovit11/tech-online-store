@@ -34,6 +34,7 @@
             }
         }
         .utils-autor{
+            position: relative;
             line-height: 21px;
             display: flex;
             justify-content: flex-end;
@@ -78,14 +79,13 @@
     .slick-dots {
         position: absolute;
         bottom: -45px;
-        right: -422px;
+        right: 0px;
         list-style: none;
         display: flex;
         text-align: center;
         justify-content: flex-end;
         padding: 0;
         margin: 0;
-        width: 100%;
         .slick-active button{
             background-color: #0156FF;
         }

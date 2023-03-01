@@ -6,10 +6,13 @@ import './style.scss'
 
 const Card = ({inStock,img,desc,oldSales,newSales, id, count}) => {
   const {card, setCard } = useContext(CardContext);
-  
+  const showModal = ()=>{
+    alert(`You added in cart ${count} item ${desc}, count ${newSales} `)
+  }
   const addItems= () =>{
      const newCard =[...card, {inStock,img,desc,oldSales,newSales, id, count}]
-     setCard(newCard)
+     setCard(newCard);
+     showModal()
   }
   return (
     <div>

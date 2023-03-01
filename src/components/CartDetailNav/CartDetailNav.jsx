@@ -8,7 +8,7 @@ import CardInMiniCart from '../CardInMiniCart/CardInMiniCart'
 
 const CartDetailNav = ({id}) => {
   const {card, setCard} = useContext(CardContext)
-  const priceTotal= card.reduce((prev, curr)=>{return prev + curr.newSales}, 0)
+  const priceTotal = card.reduce((prev, curr) => (prev + curr.count * curr.newSales ) , 0);
 
 
   const deleteProduct = (id) =>{

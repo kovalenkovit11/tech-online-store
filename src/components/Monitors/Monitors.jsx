@@ -4,10 +4,12 @@ import Card from '../Card/Card'
 import CastomCard from '../CastomCard/CastomCard'
 import image from './image30.png'
 const Monitors = () => {
+  const shownCards = (monitors.slice(0,5));
+
   return (
     <div className='content-wrapper'>
     <CastomCard text={"Gaming"} subTitle={'Monitors'} style={{backgroundImage:`url(${image})`}}/>
-    {monitors.map((card) => {
+    {shownCards.map((card) => {
             return (
               <Card 
               inStock={card.inStock}

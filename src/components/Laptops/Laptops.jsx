@@ -7,6 +7,7 @@ import IMAGE from './image30.png'
 
 
 const Laptops = () => {
+  const shownCards = (laptops.slice(0,5));
   return (
     <div>
     <NavigateProduct/>
@@ -14,7 +15,7 @@ const Laptops = () => {
    
     <CastomCard text={"MSI"} subTitle={'Laptops'} style={{backgroundImage:`url(${IMAGE})`}}/>
 
-    {laptops.map((card) => {
+    {shownCards.map((card) => {
             return (
               <Card 
               inStock={card.inStock}

@@ -7,7 +7,7 @@ const CardInCart = ({
   increase,
   decrease,
   // priceTotal,
-  // changeValue,
+  changeValue,
 }) => {
   const { img, desc, newSales, count,  id,  } = product;
   const priceSummary = newSales * count
@@ -34,7 +34,7 @@ const CardInCart = ({
           className="count__input"
           type="number"
           onChange={(e) => {
-            // changeValue(id, +e.target.value);
+            changeValue(id, +e.target.value);
           }}
           min={1}
           max={100}

@@ -3,9 +3,10 @@
   import CartDetailNav from "../CartDetailNav/CartDetailNav";
   import "./style.scss";
 
+  
+  
   const Navigation = () => {
-    const [query, setQuery] = useState('')
-    console.log(query);
+  
     const [searchIcon, setSearchIcon] = useState('34px') //34px 130px
     const [search, setSearch] = useState ('none');
     const showSearchBar = () =>{
@@ -15,7 +16,9 @@
     const hideSearchBar = () =>{
       setSearch ('none');
       setSearchIcon('34px')
+      
     }
+
     return (
       <div>
       <nav className="navbar">
@@ -45,8 +48,8 @@
           </ul>
         </div>
         <div className="nav-right">
-        <div  className="search-input"> 
-        <input style={{display: search}} className="form-control" type="text" placeholder="Search..." onChange={(e)=>{setQuery(e.target.value)}} />
+         <div  className="search-input"> 
+        <input style={{display: search}} className="form-control" type="text" placeholder="Search..." />
         <svg onClick={hideSearchBar} style={{display: search, position: 'absolute',top:'4px',  right: '34px', cursor: 'pointer'}}  width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M3.8457 3.84613L15.1535 15.1539" stroke="#0156FF" strokeWidth="2.4" strokeLinecap="round"/>
 <path d="M15.1543 3.84613L3.84653 15.1539" stroke="#0156FF" strokeWidth="2.4" strokeLinecap="round"/>

@@ -3,15 +3,16 @@ import "./style.scss";
 import CardInCart from "../../components/CardInCart/CardInCart";
 import CartSummary from "../../components/CartSummary/CartSummary";
 import { CardContext } from "../../../src/App.js";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { card, setCard } = useContext(CardContext);
   const priceTotal = card.reduce((prev, curr) => (prev + curr.count * curr.newSales ) , 0);
 
   const deleteProduct = (id) => {
-    setCard((card) => card.filter((product) => id !== product.id));
+    setCard((card) => card.filter((product) => id !== product.id)); //
   };
-
+const deleteAllProduct = () => { setCard((card) => card.filter((product) => !product ))}
   const increase = (id) => {
     setCard((card) => {
       return card.map((product) => {
@@ -85,10 +86,12 @@ const Cart = () => {
           </div>
           <div className="cart-btn">
             <div className="">
-              <button className="cart-btn__btn disabled">
+             <Link to={"/"}> 
+             <button className="cart-btn__btn ">
                 Continue Shopping
               </button>
-              <button className="cart-btn__btn">Clear Shopping Cart</button>
+                </Link>
+              <button onClick={deleteAllProduct} className="cart-btn__btn disabled">Clear Shopping Cart</button>
             </div>
 
             <div>

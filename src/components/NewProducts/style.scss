@@ -3,9 +3,42 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
 }
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
 
+    h3 {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 33px;
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: #000000;
+    }
+
+    a {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 115%;
+        text-decoration-line: underline;
+        color: #0156ff;
+        
+    }
+}
+.cards-container{
+    display: flex;
+    flex-wrap: wrap;
+}
 .brake-line{
     margin-top: 10px;
     display: flex; 

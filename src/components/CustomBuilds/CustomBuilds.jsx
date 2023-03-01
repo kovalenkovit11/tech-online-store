@@ -5,13 +5,15 @@ import image from "./img/image30.jpg"
 import { castomBuilds } from '../../helpers/customBuilds'
 import './style.scss'
 const CustomBuilds = () => {
+  const shownCards = (castomBuilds.slice(0,5));
+
   return (
     <div className='content-wrapper'>
         <CastomCard text={"Castom"} subTitle={'Builds'} style={{
           backgroundImage:`url(${image})`
           
           }} />
-        {castomBuilds.map((card) => {
+        {shownCards.map((card) => {
             return (
               <Card 
               inStock={card.inStock}
