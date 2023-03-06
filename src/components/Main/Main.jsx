@@ -9,6 +9,7 @@ import Brands from '../Brands/Brands';
 import FollowUs from '../FollowUs/FollowUs';
 import Comments from '../Comments/Comments';
 const Main = () => {
+  
   return (
     <div className='main-wrapper'>
       <p className="main" alt='img'/>

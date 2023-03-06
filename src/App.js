@@ -7,6 +7,7 @@ import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
 import Cart from "./pages/Cart/Cart";
 import Page404 from "./pages/Page404/Page404";
+import AboutCard from "./pages/AboutCard/AboutCard";
 
 export const CardContext = createContext({
   card: [],
@@ -34,6 +35,7 @@ function App() {
           <Route path="/allOthers" element={<Page404 />} />
           <Route path="/repairs" element={<Page404 />} />
           <Route path="/details" element={<Page404 />} />
+          <Route path="/aboutProduct" element={<AboutCard />} />
         </Routes>
 
         <Footer />

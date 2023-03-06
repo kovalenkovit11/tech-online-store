@@ -2,7 +2,12 @@ import React from "react";
 import Navigation from "../Navigation/Navigation";
 import "./index.scss";
 
+
+
 const Header = () => {
+
+
+
   return (
     <div className="border-bot">
     <header className="header">

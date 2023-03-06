@@ -1,5 +1,5 @@
   import React, {useState} from "react";
-  import { Link } from "react-router-dom";
+  import { Link} from "react-router-dom";
   import CartDetailNav from "../CartDetailNav/CartDetailNav";
   import "./style.scss";
 
@@ -16,9 +16,11 @@
     const hideSearchBar = () =>{
       setSearch ('none');
       setSearchIcon('34px')
+     
       
     }
-
+    
+ 
     return (
       <div>
       <nav className="navbar">
@@ -48,13 +50,14 @@
           </ul>
         </div>
         <div className="nav-right">
-         <div  className="search-input"> 
-        <input style={{display: search}} className="form-control" type="text" placeholder="Search..." />
+         <div className="search-input"> 
+        <input style={{display: search}} className="form-control" type="text" name="search" placeholder="Search..." />
         <svg onClick={hideSearchBar} style={{display: search, position: 'absolute',top:'4px',  right: '34px', cursor: 'pointer'}}  width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M3.8457 3.84613L15.1535 15.1539" stroke="#0156FF" strokeWidth="2.4" strokeLinecap="round"/>
 <path d="M15.1543 3.84613L3.84653 15.1539" stroke="#0156FF" strokeWidth="2.4" strokeLinecap="round"/>
 </svg>
-          <svg
+         <button className="submit" >  <svg
+          
           onClick={showSearchBar}
           style={{
             cursor: 'pointer',
@@ -75,9 +78,10 @@
               stroke="black"
               strokeWidth="0.2"
             />
-          </svg>
+          </svg></button> 
+       
         </div>
-            <CartDetailNav />
+            <CartDetailNav  />
         </div>
         </nav>
       </div>
