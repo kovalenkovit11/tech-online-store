@@ -13,4 +13,52 @@
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
   }
+  .container-header{
+    height: 114px;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    .about-card_header{
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 1400px;
+      height: 100%;
+      display: flex;
+      .list-items{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+      .header-page_right{
+        display: flex;
+        align-items: center;
+      
+        .input-container{
+          justify-content: center;
+          margin-left: 14px;
+          display: flex;
+          align-items: center;
+          width: 70px;
+          height: 50px;
+          background-color: #f5f7ff;
+          margin-right: 20px;
+        }
+        .btn{
+          border-radius: 50px;
+          border: none;
+          height: 50px;
+          width: 150px;
+          
+        }
+        .add-cart{
+          color: #fff;
+          background-color: #0156FF;
+          margin-right: 10px;
+        }
+        .pay-pal{
+          background-color:#FFB800 ;
+        }
+      }
+    }
+  }
   
+ 

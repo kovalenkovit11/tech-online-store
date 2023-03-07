@@ -1,4 +1,5 @@
 import React, {useContext} from 'react'
+import payPal from "../../components/Navigation/payPal.svg";
 import './style.scss'
 
 import { CardContext } from '../../App';
@@ -52,8 +53,8 @@ const AboutCard = () => {
       };
 
   return (
-    <div className='container'>
-        <header className='x'>
+    <div className='container-header'>
+        <header className='about-card_header'>
         <div>
             <ul className='list-items'>
                 <li className='list-item active'>About Product</li>
@@ -63,6 +64,7 @@ const AboutCard = () => {
         </div>
         <div className='header-page_right'>
             <p>On Sale from {priceTotal}</p>
+            <div className='input-container'>
             <input
           className="count__input"
           type="number"
@@ -71,7 +73,7 @@ const AboutCard = () => {
           }}
           min={1}
           max={100}
-          value={card.count}
+          value={1}
         />
          <div
           style={{
@@ -119,6 +121,11 @@ const AboutCard = () => {
             />
           </svg>
         </div>
+            </div>
+            <button className='btn add-cart'>Add to Cart</button>
+            <button className='btn pay-pal'><img src={payPal} alt="payPal"/></button>
+
+
         </div>
 
         </header>
